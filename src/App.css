@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+/* BoardGame.css */
+
+.board-container {
+  border: 1px solid black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1px;
+}
