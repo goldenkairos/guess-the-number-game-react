@@ -5,7 +5,7 @@ import SecretNumber from "./SecreNumber";
 function App() {
   return (
     <div className="App">
-      Numdle
+      Numberdore
       <SecretNumber />
       {/* <BoardGame /> */}
       Hello World

@@ -11,6 +11,7 @@ function Block({ number, color, secretNumber }) {
     marginTop: "4px",
     paddingBottom: "4px",
     color: "white",
+    borderRadius:'5px',
     verticalAlign: "middle",
     borderColor: "#363638",
     lineHeight: "70px", // Center vertically
