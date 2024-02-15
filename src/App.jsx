@@ -4,11 +4,9 @@ import SecretNumber from "./SecreNumber";
 
 function App() {
   return (
-    <div className="App">
+    <div className="header">
       Numberdore
       <SecretNumber />
-      {/* <BoardGame /> */}
-      Hello World
     </div>
   );
 }

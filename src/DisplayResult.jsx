@@ -7,7 +7,7 @@ function DisplayResult ({secretNumber, userWin}){
   return (
     <>
       {userWin ? 
-      <div className="congratsMessage">CONGRATS</div>
+      <div className="congratsMessage">GREAT JOB! YOU GUESSED THE CORRECT NUMBER!</div>
       :
       <div>
         <span className="message"> Sorry! The secret number is: </span>

@@ -41,7 +41,7 @@
 
 .board-container {
   border: 1px solid black;
-  height: 100vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,6 +50,66 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: 1px;
+}
+
+.game-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  margin: auto;
+  position: absolute;
+  top:0 ; left:0; bottom: 0; right: 0;
+}
+
+.message{
+  position: absolute;
+  top:140px;
+  width: 600px;
+  height: 200px;
+  padding: 20px 10px;
+  text-align: center;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+.congratsMessage{
+  position: absolute;
+  top:140px;
+  width: 600px;
+  height: 200px;
+  padding: 20px 10px;
+  text-align: center;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+.header {
+  padding-top: 20px;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+button {
+  background-color: #3e7963;
+  border: none;
+  color: white;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover {
+  background-color: #58ae8e;
 }

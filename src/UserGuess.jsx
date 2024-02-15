@@ -1,25 +1,35 @@
-function UserGuess({ handleUserInput }) {
-  //TODO: handle only number
+import { useState } from "react";
+function UserGuess({ handleUserInput, isGameCompleted }) {
+  const [userInput, setUserInput] = useState("");
 
   const handleSubmit = (e) => {
-    console.log("submit button click");
     e.preventDefault(); //Prevent the form from submitting
-    handleUserInput(e.target.elements.userInput.value);
-    console.log(e.target.elements.userInput.value);
+    console.log(userInput);
+    handleUserInput(userInput);
+
+    //clear the input field after each submission
+    setUserInput("");
+  };
+
+  //display user's input on the field as the user types
+  const handleChange = (e) => {
+    setUserInput(e.target.value);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Guess a 4-digit number:</label>
       <input
         type="text"
         id="userInput"
         maxLength="4"
         pattern="\d{4}"
         required
-        // onChange={(e) => handleUserInput(e.target.value)}
+        value={userInput}
+        onChange={handleChange}
       ></input>
-      <button type="submit">Submit Guess</button>
+      <button type="submit" disabled={isGameCompleted}>
+        Submit Guess
+      </button>
     </form>
   );
 }

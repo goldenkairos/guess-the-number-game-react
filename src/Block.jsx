@@ -1,4 +1,4 @@
-function Block({ number, color, secretNumber }) {
+function Block({ number, color }) {
   let bgStyle = {
     width: "70px",
     backgroundColor: color,
