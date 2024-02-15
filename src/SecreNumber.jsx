@@ -49,42 +49,42 @@ function SecretNumber() {
 
   //update the board based on userInput
   function updateBoard(userInput, currRowIdx) {
-      let usetInputArr = userInput.split("");
-      let count = 0;
-      //return "green" if the digit from user's guess is in the correct position
-      //return "yellow" if the digit from user's guess is in the secret number
-      //return "gray" if the digit is not in the secret number
-      const validateUserGuess = usetInputArr.map((inputDigit, idx) => {
-        if (inputDigit == secretNumber[idx]) {
-          count += 1;
-          return { number: inputDigit, status: "#538d4e" }; //green for correct position
-        } else if (secretNumber.includes(inputDigit)) {
-          return { number: inputDigit, status: "#c3b26a" }; //yellow for correct digit
-        } else {
-          return { number: inputDigit, status: "#373b37" }; //gray for incorrect input
-        }
-      });
-  
-      //update the board after validation
-      setBoard((prevBoard) => {
-        let updatedBoard = [...prevBoard];
-        updatedBoard[currRowIdx] = validateUserGuess;
-        return updatedBoard;
-      });
-  
-      //checkf if the user has guessed all 4 digit correctly
-      if (count == 4) {
-        setCorrectCount(4);
-        setUserWin(true);
+    let usetInputArr = userInput.split("");
+    let count = 0;
+    //return "green" if the digit from user's guess is in the correct position
+    //return "yellow" if the digit from user's guess is in the secret number
+    //return "gray" if the digit is not in the secret number
+    const validateUserGuess = usetInputArr.map((inputDigit, idx) => {
+      if (inputDigit == secretNumber[idx]) {
+        count += 1;
+        return { number: inputDigit, status: "#538d4e" }; //green for correct position
+      } else if (secretNumber.includes(inputDigit)) {
+        return { number: inputDigit, status: "#c3b26a" }; //yellow for correct digit
+      } else {
+        return { number: inputDigit, status: "#373b37" }; //gray for incorrect input
       }
+    });
+
+    //update the board after validation
+    setBoard((prevBoard) => {
+      let updatedBoard = [...prevBoard];
+      updatedBoard[currRowIdx] = validateUserGuess;
+      return updatedBoard;
+    });
+
+    //checkf if the user has guessed all 4 digit correctly
+    if (count == 4) {
+      setCorrectCount(4);
+      setUserWin(true);
     }
-  
+  }
+
   function handleUserInput(userInput) {
-      setUserGuesses([...userGuesses, userInput]);
-      const currRowIdx = userGuesses.length;
-      console.log("current guess index ",currRowIdx);
-      updateBoard(userInput, currRowIdx);
-    }
+    setUserGuesses([...userGuesses, userInput]);
+    const currRowIdx = userGuesses.length;
+    console.log("current guess index ", currRowIdx);
+    updateBoard(userInput, currRowIdx);
+  }
 
   function startGame() {
     const newSecretNumber = numberGenerator(4);
@@ -122,7 +122,6 @@ function SecretNumber() {
     setUserWin(false);
   }
 
-
   function checkGameCompletion() {
     const numberOfGuesses = userGuesses.length;
 
@@ -139,7 +138,7 @@ function SecretNumber() {
     <>
       <div className="game-container">
         {isGameCompleted ? (
-          <DisplayResult secretNumber={ {secretNumber} } userWin={userWin} />
+          <DisplayResult secretNumber={secretNumber} userWin={userWin} />
         ) : (
           <div></div>
         )}

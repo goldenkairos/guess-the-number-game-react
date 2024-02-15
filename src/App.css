@@ -42,9 +42,10 @@
 .board-container {
   border: 1px solid black;
   height: 40vh;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .grid-container {
