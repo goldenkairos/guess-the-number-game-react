@@ -81,7 +81,7 @@ function SecretNumber() {
     });
 
     //checkf if the user has guessed all 4 digit correctly
-    if (count == 4) {
+    if (count === 4) {
       setCorrectCount(4);
       setUserWin(true);
     }
