@@ -5,7 +5,7 @@ function DisplayResult({ secretNumber, userWin }) {
   console.log(secretNumberStr);
 
   return (
-    <div div className="message-container">
+    <div className="message-container">
       {userWin ? (
         <div className="congratsMessage">          
           YOU GUESSED THE CORRECT NUMBER!

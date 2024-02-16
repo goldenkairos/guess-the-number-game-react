@@ -52,7 +52,7 @@ function SecretNumber() {
     for (let i = 0; i < secretNumberLength; i++) {
       secretNumber += Math.floor(Math.random() * 9 + 1);
     }
-    console.log(secretNumber);
+    // console.log(secretNumber);
     return secretNumber;
   }
 
