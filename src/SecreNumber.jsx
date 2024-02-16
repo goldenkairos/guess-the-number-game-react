@@ -6,6 +6,7 @@ import DisplayResult from "./DisplayResult";
 function SecretNumber() {
   const [secretNumber, setSecretNumber] = useState("");
   const [userGuesses, setUserGuesses] = useState([]);
+  const [gameStarted, setGameStarted] = useState(false);
   const [board, setBoard] = useState([
     [
       { number: "", status: "#121213" },
@@ -37,6 +38,13 @@ function SecretNumber() {
   const [correctCount, setCorrectCount] = useState(0);
   const [userWin, setUserWin] = useState(false);
 
+  useEffect(() => {
+    if (!gameStarted) {
+      startGame();
+      setGameStarted(true);
+    }
+  }, []);
+
   function numberGenerator(secretNumberLength) {
     let secretNumber = "";
 
@@ -55,7 +63,7 @@ function SecretNumber() {
     //return "yellow" if the digit from user's guess is in the secret number
     //return "gray" if the digit is not in the secret number
     const validateUserGuess = usetInputArr.map((inputDigit, idx) => {
-      if (inputDigit == secretNumber[idx]) {
+      if (inputDigit === secretNumber[idx]) {
         count += 1;
         return { number: inputDigit, status: "#538d4e" }; //green for correct position
       } else if (secretNumber.includes(inputDigit)) {
@@ -125,7 +133,7 @@ function SecretNumber() {
   function checkGameCompletion() {
     const numberOfGuesses = userGuesses.length;
 
-    if (numberOfGuesses == 4 || correctCount == 4) {
+    if (numberOfGuesses === 4 || correctCount === 4) {
       setIsGameCompleted(true);
     }
   }
@@ -138,7 +146,7 @@ function SecretNumber() {
     <>
       <div className="game-container">
         {isGameCompleted ? (
-          <DisplayResult secretNumber={secretNumber} userWin={userWin} />
+          <DisplayResult secretNumber={{ secretNumber }} userWin={userWin} />
         ) : (
           <div></div>
         )}
@@ -160,7 +168,7 @@ function SecretNumber() {
             )}
           </div>
         </div>
-        <button type="button" onClick={startGame}>
+        <button className="new-game-button" type="button" onClick={startGame}>
           New Game
         </button>
       </div>

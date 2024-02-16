@@ -42,10 +42,12 @@
 .board-container {
   border: 1px solid black;
   height: 40vh;
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  /* margin: 10px; */
+  padding-bottom: 10px;
+  padding-top:10px;
 }
 
 .grid-container {
@@ -66,11 +68,14 @@
   top:0 ; left:0; bottom: 0; right: 0;
 }
 
+.message-container{
+  height: 80px;
+}
 .message{
   position: absolute;
-  top:140px;
+  top:80px;
   width: 600px;
-  height: 200px;
+  height: 80px;
   padding: 20px 10px;
   text-align: center;
   margin: 0 auto;
@@ -84,7 +89,7 @@
   position: absolute;
   top:140px;
   width: 600px;
-  height: 200px;
+  height: 80px;
   padding: 20px 10px;
   text-align: center;
   margin: 0 auto;
@@ -113,4 +118,20 @@ button {
 
 button:hover {
   background-color: #58ae8e;
+}
+
+.new-game-button{
+  margin-top: 20px;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 600px) {
+  .game-container {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  /* Adjust margin between items */
+  .board-container {
+    margin-bottom: 20px;
+  }
 }
