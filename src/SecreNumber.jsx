@@ -38,12 +38,12 @@ function SecretNumber() {
   const [correctCount, setCorrectCount] = useState(0);
   const [userWin, setUserWin] = useState(false);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!gameStarted) {
       startGame();
       setGameStarted(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function numberGenerator(secretNumberLength) {
@@ -139,9 +139,9 @@ function SecretNumber() {
     }
   }
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     checkGameCompletion();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userGuesses]);
 
   return (
