@@ -125,9 +125,13 @@ button:hover {
 }
 
 /* Media query for small screens */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .game-container {
     flex-direction: column; /* Stack items vertically */
+  }
+
+  form{
+    margin-bottom: 20px;
   }
 
   /* Adjust margin between items */
