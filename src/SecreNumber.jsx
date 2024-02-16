@@ -38,6 +38,7 @@ function SecretNumber() {
   const [correctCount, setCorrectCount] = useState(0);
   const [userWin, setUserWin] = useState(false);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!gameStarted) {
       startGame();
@@ -137,7 +138,7 @@ function SecretNumber() {
       setIsGameCompleted(true);
     }
   }
-  
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     checkGameCompletion();
